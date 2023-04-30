@@ -92,9 +92,9 @@
                         <configuration>
                             <inputSpec>${project.basedir}/src/main/resources/swaggers/pet-api-swagger.yaml</inputSpec>
                             <generatorName>spring</generatorName>
-                            <packageName>${project.groupId}.springreactiveopenapicodegen</packageName>
-                            <apiPackage>${project.groupId}.springreactiveopenapicodegen.api.v1</apiPackage>
-                            <modelPackage>${project.groupId}.springreactiveopenapicodegen.dto</modelPackage>
+                            <packageName>${project.groupId}.springwebfluxcontractfirstsample</packageName>
+                            <apiPackage>${project.groupId}.springwebfluxcontractfirstsample.api.v1</apiPackage>
+                            <modelPackage>${project.groupId}.springwebfluxcontractfirstsample.dto</modelPackage>
                             <generateApiTests>false</generateApiTests>
                             <generateModelTests>false</generateModelTests>
                             <modelNameSuffix>Dto</modelNameSuffix>
