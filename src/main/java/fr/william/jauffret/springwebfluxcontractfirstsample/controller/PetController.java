@@ -2,9 +2,12 @@ package fr.william.jauffret.springwebfluxcontractfirstsample.controller;
 
 import fr.william.jauffret.springwebfluxcontractfirstsample.api.v1.PetApi;
 import fr.william.jauffret.springwebfluxcontractfirstsample.dto.PetDto;
+import jdk.jfr.StackTrace;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Flux;
@@ -20,11 +23,12 @@ public class PetController implements PetApi {
 
     @Override
     public Mono<ResponseEntity<Flux<PetDto>>> getPets(ServerWebExchange exchange) {
-        PetDto petDto1 = new PetDto();
-        petDto1.setPetId(1);
-        petDto1.setName("William");
-        petDto1.setBirthDate(OffsetDateTime.now());
-        Flux<PetDto> flux = Flux.fromStream(Stream.of(petDto1, petDto1, petDto1));
-        return Mono.just(ResponseEntity.ok(flux));
+        return Mono.empty();
+    }
+
+    @Override
+    @ResponseStatus(HttpStatus.CREATED)
+    public Mono<ResponseEntity<Void>> addPet(Mono<PetDto> petDto, ServerWebExchange exchange) {
+        return Mono.empty();
     }
 }

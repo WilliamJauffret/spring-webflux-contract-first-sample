@@ -7,8 +7,7 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   contact:
-    name: Store Development Team
-    email: STORE-TEAM@example.com
+    name: William Jauffret
 servers:
   - url: http://localhost
     description: local
@@ -38,7 +37,7 @@ paths:
           description: Bad Request
     post:
       tags:
-        - "Pet APIs"
+        - "Pet"
       summary: "Add a Pet"
       description: "Add a single Pet"
       operationId: "addPet"
@@ -48,8 +47,8 @@ paths:
             schema:
               $ref: '#/components/schemas/Pet'
       responses:
-        "200":
-          description: OK
+        "201":
+          description: CREATED
         "400":
           description: Bad Request
 
